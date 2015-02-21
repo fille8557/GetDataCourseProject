@@ -21,7 +21,7 @@ names(test_subject) <- "subject"
 ## combine data into test and train sets, then combine into one
 alltrain <- cbind(train_subject, train_y, train_x)
 alltest <- cbind(test_subject, test_y, test_x)
-alldata <- rbdind(alltrain, alltest)
+alldata <- rbind(alltrain, alltest)
 
 ##find columns needed for mean and std
 findmean <- grep("mean", names(alldata), fixed=TRUE)
@@ -41,10 +41,6 @@ gooddata$activity <- recode(gooddata$activity, "1='WALKING';
 
 ##average of each variable by activity and subject
 library(plyr)
-library(dplyr)
 
-subject1 <- gooddata[gooddata$subject==1,]
-by_activity <- subject1 %>% group_by(activity)
-by_activity %>% summarise_each(funs(mean))
-
-##or summarize with ddplyr??
+tidydata <- ddply(gooddata, .(subject, activity), numcolwise(mean))
+tidydata
