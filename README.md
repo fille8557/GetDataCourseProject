@@ -48,7 +48,8 @@ You should create one R script called run_analysis.R that does the following. 
  * 4 SITTING
  * 5 STANDING
  * 6 LAYING
-This was done manually, with the recode function in the car package, rather than creating a dataset and character vector like for the features file.
+
+ This was done manually, with the recode function in the car package, rather than creating a dataset and character vector like for the features file.
 
 ##Tidy data results
 ###Step 5: From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
