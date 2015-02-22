@@ -56,9 +56,10 @@ You should create one R script called run_analysis.R that does the following. 
 
 1. Using the ddply funciton in the plyr package, get the mean of each activity (column), by each subject and activity.
  * This "tidydata" dataset has 180 rows (30 subject x 6 activities) and the same 81 columns from the dataset created in steps 2 and 3 above.
- 2. Using the melt function in the reshape package, data is reshaped into a long format, with 4 columns: subject (column 1 from tidydata), activity (column 2 from tidydata), measurement (the 79 remaining columns from tidydata), and the mean value (the row data from tidydata).
-* This format was chosen as it is easier to read in a txt file.
-* There are now 14220 rows (180 rows from tidydata x 79 columns of measurements) and 4 columns.
+2. Using the melt function in the reshape package, data is reshaped into a long format, with 4 columns: subject (column 1 from tidydata), activity (column 2 from tidydata), measurement (the 79 remaining columns from tidydata), and the mean value (the row data from tidydata).
+ * This format was chosen as it is easier to read in a txt file.
+ * There are now 14220 rows (180 rows from tidydata x 79 columns of measurements) and 4 columns.
+3. The output is the head() of the reshaped, long format tidydata dataset.
 
 ##Codebook
  14220 rows and 4 columns
