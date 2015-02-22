@@ -41,6 +41,9 @@ gooddata$activity <- recode(gooddata$activity, "1='WALKING';
 
 ##average of each variable by activity and subject
 library(plyr)
+library(reshape)
 
 tidydata <- ddply(gooddata, .(subject, activity), numcolwise(mean))
-tidydata
+tidydata2 <- melt(tidydata, id=c("subject", "activity"))
+names(tidydata2) <- c("subject", "activity", "measurement", "mean")
+head(tidydata2)
